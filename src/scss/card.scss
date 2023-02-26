@@ -1,0 +1,60 @@
+@import './themes/theme-light.scss';
+@import './themes/theme-dark.scss';
+@import './typography.scss';
+
+
+.landing-page {
+    .card-experience {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 16px;
+
+        .eqHeight {
+            display: table;
+            height: 60px;
+        }
+
+        .eqHeight>div {
+            display: table-row;
+        }
+
+        .show-more {
+            color: $elementLight;
+        }
+        
+          li{
+            padding-bottom: 1em;
+          }
+          ul li::before {
+            content: "\2022";
+            color: $elementLight;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+          }
+    }
+
+    .card-experience:hover {
+        h5 {
+            color: $elementLight;
+            transition: .2s, ;
+        }
+    }
+
+}
+
+.landing-page.dark {
+    .card-experience {
+        background-color: rgba(255, 255, 255, 0.1);
+
+        .show-more {
+            color: $elementDark;
+        }
+    }
+
+    .card-experience:hover {
+        h5 {
+            color: $elementDark;
+            transition: .2s, ;
+        }
+    }
+}

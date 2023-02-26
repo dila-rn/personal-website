@@ -28,11 +28,28 @@
     color: inherit;
   }
 
+  .section-line{
+    color: $secondaryLight;
+    border: 1px solid $secondaryLight;
+  }
+
+  @media screen and (max-width: 576px) {
+  
+    .section-line{
+      display: none;
+    }
+  }
+
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: $primaryLight;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.08));
+    
+    a:hover {
+        color: $elementLight;
+    }
   }
 
   ul {
@@ -44,7 +61,7 @@
   .social-media {
     width: 40px;
     position: fixed;
-    bottom: 10vh;
+    bottom: 27vh;
     left: 40px;
     right: auto;
     color: $secondaryLight;
@@ -67,7 +84,7 @@
   .section-title {
     width: 40px;
     position: fixed;
-    bottom: 10vh;
+    bottom: 27vh;
     left: auto;
     right: 40px;
     color: $secondaryLight;
@@ -92,8 +109,10 @@
     margin: 0px auto;
     max-width: 850px;
 
+
+
     section {
-      margin-top: 230px;
+      margin-top: 200px;
       min-height: 70vh;
       text-align: left;
     }
@@ -104,6 +123,13 @@
 
     h2 {
       opacity: 70%;
+    }
+
+    @media screen and (max-width: 576px) {
+  
+      h1{
+        font-size: 3.5em;
+      }
     }
 
     button {
@@ -148,9 +174,9 @@
   #about {
     margin: 0px auto;
     max-width: 850px;
-    padding-top: 100px;
+    padding-top: 120px;
 
-    min-height: 100vh;
+    min-height: 90vh;
     text-align: left;
 
     h2 {
@@ -168,7 +194,7 @@
       height: 0;
       padding-bottom: 100%;
       border-radius: 50%;
-      box-shadow: 8px 8px 0 $elementLight;
+      box-shadow: 16px 16px 0 $elementLight;
       transition: box-shadow .5s, transform .5s;
       position: relative;
       cursor: pointer;
@@ -186,8 +212,8 @@
 
     .picture-wrapper:hover {
       transform: scale(1.05);
-      transform: translate(-4px, -4px);
-      box-shadow: 16px 16px 0 $elementLight;
+      transform: translate(4px, 4px);
+      box-shadow: 8px 8px 0 $elementLight;
 
       img {
         opacity: 1;
@@ -213,7 +239,7 @@
     margin: 0px auto;
     max-width: 850px;
     padding-top: 100px;
-    min-height: 100vh;
+    min-height: 80vh;
     text-align: left;
 
     h6{
@@ -232,10 +258,9 @@
   #project{
     margin: 0px auto;
     max-width: 850px;
-    padding-top: 100px;
+    padding-top: 120px;
 
     min-height: 100vh;
-    text-align: left;
 
     h2 {
       color: $elementLight;
@@ -289,9 +314,19 @@
     color: $secondaryDark
   }
 
+  .section-line{
+    color: $secondaryDark;
+    border: 1px solid $secondaryDark;
+  }
+
   nav {
     background-color: $primaryDark;
     color: $secondaryDark;
+    filter: drop-shadow(0px 0px 15px rgba(225, 225, 225, 0.1));
+
+    a:hover {
+      color: $elementDark;
+    }
   }
 
   main {
@@ -321,11 +356,11 @@
 
     .picture-wrapper {
       background-color: $primaryDark;
-      box-shadow: 8px 8px 0 $elementDark;
+      box-shadow: 16px 16px 0 $elementDark;
     }
 
     .picture-wrapper:hover{
-      box-shadow: 16px 16px 0 $elementDark;
+      box-shadow: 8px 8px 0 $elementDark;
     }
   }
 

@@ -5,8 +5,11 @@
 
 .landing-page {
     .card-experience {
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 16px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        position: relative;
+        top: 0px;
+        transition: top ease 0.2s;
 
         .eqHeight {
             display: table;
@@ -20,27 +23,101 @@
         .show-more {
             color: $elementLight;
         }
-        
-          li{
+
+        li {
             padding-bottom: 1em;
-          }
-          ul li::before {
+        }
+
+        ul li::before {
             content: "\2022";
             color: $elementLight;
-            display: inline-block; 
+            display: inline-block;
             width: 1em;
             margin-left: -1em;
-          }
+        }
     }
 
     .card-experience:hover {
+        top: -8px;
+
         h5 {
             color: $elementLight;
             transition: .2s, ;
         }
     }
 
+    .card-project {
+        position: relative;
+        left: -8em;
+
+        .wrapper {
+            max-width: 45em;
+            min-height: 25em;
+            background-color: white;
+            // box-shadow:  8px 14px 32px #ccc2bcdc;
+
+        }
+
+        .explanation {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            position: absolute;
+            width: 27em;
+            height: fit-content;
+
+            h3,
+                div {
+                    color: $elementLight;
+                }
+        }
+
+
+        .card-project-even {
+
+            text-align: right;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: auto;
+                opacity: 0.8;
+            }
+
+            .explanation {
+                top: 10em;
+                right: -20em;
+                box-shadow: 16px 16px 0 $elementLight;
+            }
+
+        }
+
+        .card-project-odd {
+            .wrapper {
+                position: relative;
+                right: -20em;
+            }
+
+            img {
+                position: relative;
+                object-fit: cover;
+                width: 100%;
+                height: auto;
+                opacity: 0.8;
+            }
+
+            .explanation {
+                top: 10em;
+                right: 20em;
+                width: 27em;
+                box-shadow: -16px 16px 0 $elementLight;
+                
+            }
+        }
+    }
+
 }
+
+
 
 .landing-page.dark {
     .card-experience {
@@ -55,6 +132,17 @@
         h5 {
             color: $elementDark;
             transition: .2s, ;
+        }
+    }
+
+    .card-project{
+        .explanation {
+            background-color: rgba(84, 84, 105, 0.4);
+
+            h3,
+                div {
+                    color: $elementDark;
+                }
         }
     }
 }

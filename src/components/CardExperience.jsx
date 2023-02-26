@@ -24,10 +24,11 @@ function CardExperience(props) {
     return (
         <div className="py-3">
             <div className='card-experience' onClick={handleSeeMore}>
-                <div className='p-4'>
+                <div className='px-4 pt-4'>
                     <p className='text-muted d-flex justify-content-end textSM'>{props.duration}</p>
                     <h6>{props.company}</h6>
-                    <h5 className='eqHeight'>{props.role}</h5>
+                    <h5 className='eqHeight textMD'>{props.role}</h5>
+                    <hr className='col-12'/>
                     {isSeeMoreClicked &&
                         <div>
                             <ul>

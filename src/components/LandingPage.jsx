@@ -3,6 +3,7 @@ import "../scss/LandingPage.scss";
 import { Icon } from '@iconify/react';
 import ThemeToggle from "./ThemeToggle";
 import CardExperience from "./CardExperience";
+import CardProject from "./CardProject";
 
 function LandingPage() {
   const [theme, setTheme] = useState("light");
@@ -31,7 +32,7 @@ function LandingPage() {
 
     {
       id: 2,
-      company: "Luvia",
+      company: "LUVIA",
       role: "Graphic Designer",
       duration: "Apr 2022 - Jun 2022",
       description: {
@@ -58,6 +59,52 @@ function LandingPage() {
       description: {
         0: "I was responsible for assisting the students to do lab works and simulations, such as Combinatorial Logic circuit, Digital Aritmethic, Digital I/O Microprocessor, and Analog I/O Microprocessor.",
         1: "Evaluated the students lab reports."
+      }
+    },
+  ]
+
+  const projects = [
+    {
+      id: 0,
+      type: "Collaboration Project",
+      name: "Omah Kos Web Platform",
+      description: "With a duration of 1.5 months, Our team was dedicated to creating an easy-to-use and visually appealing platform, equipped with detailed facility explanations and photos of the houses, allowing landlords and seekers to conduct transactions directly within the platform. ",
+      image: "/images/omah-kos.jpeg",
+      stack: {
+        0: "Next.js",
+        1: "Bootstrap",
+        2: "Sass",
+        3: "Firebase",
+        4: "Vercel"
+      }
+    },
+    {
+      id: 1,
+      type: "Personal Project",
+      name: "Car Rental Platform",
+      description: "With a duration of 1.5 months, Our team was dedicated to creating an easy-to-use and visually appealing platform, equipped with detailed facility explanations and photos of the houses, allowing landlords and seekers to conduct transactions directly within the platform.",
+      image: "/images/bcr.jpeg",
+      stack: {
+        0: "React.js",
+        1: "Bootstrap",
+        2: "CSS",
+        3: "RESTful API",
+        4: "Express.js",
+        5: "Sequilize",
+        6: "Vercel"
+      }
+    },
+    {
+      id: 2,
+      type: "Personal Project",
+      name: "drn - Personal Website",
+      description: "With a duration of 1.5 months, Our team was dedicated to creating an easy-to-use and visually appealing platform, equipped with detailed facility explanations and photos of the houses, allowing landlords and seekers to conduct transactions directly within the platform.",
+      image:"/images/personal-web.jpeg",
+      stack: {
+        0: "React.js",
+        1: "Bootstrap",
+        2: "Sass",
+        3: "Vercel",
       }
     },
   ]
@@ -112,7 +159,6 @@ function LandingPage() {
 
       <div orientation="right" className="section-title">
         <p className="textSM">Personal Website - Dila Rizvina N - 2023 </p>
-
       </div>
 
       <div id="content" className="p-5">
@@ -134,8 +180,12 @@ function LandingPage() {
 
         <section id="about">
           <div>
-            <h2 className="textTitle">About Me</h2>
-            <div className="row flex-column-reverse flex-md-row">
+            <div className="d-flex align-items-center">
+            <h2 className="textTitle pe-3">About Me</h2> 
+            <hr  className="col-xl-9 col-md-6 col-lg-6 col-sm-6 section-line"/>
+            </div>
+            
+            <div className="row flex-column-reverse flex-md-row py-4">
 
               <div className="col-xl-7 col-lg-7 col-md-6 col-sm-12">
                 <p className="self-desc my-3 pe-4 textSM ">
@@ -160,13 +210,19 @@ function LandingPage() {
                   <img src={process.env.PUBLIC_URL + '/images/me.jpg'} alt="" />
                 </div>
               </div>
+
+             
             </div>
 
           </div>
         </section>
 
         <section id="experience">
-          <h2 className="textTitle d-flex justify-content-center">Experiences</h2>
+        <div className="py-4 d-flex align-items-center justify-content-center">
+          <hr  className="col-xl-4 col-lg-4 col-md-2 col-sm-2  section-line"/>
+          <h2 className="textTitle px-4">Experiences</h2>
+          <hr  className="col-xl-4 col-lg-4 col-md-2 col-sm-2  section-line"/>
+        </div>
           <div className="px-4 py-3">
             <div className="row">
               {experiences.map(item => (
@@ -184,9 +240,25 @@ function LandingPage() {
         </section>
       </div>
 
-      <section id="project">
-          <h2 className="textTitle">Projects</h2>
+      <section id="project" >
+          <h2 className="textTitle d-flex justify-content-center">Projects</h2>
           
+          <div className="px-5">
+            
+              {projects.map(item => (
+                <div className="pt-4 pb-5" key={item.id}>
+                  <CardProject
+                  id={item.id}
+                    type={item.type}
+                    name={item.name}
+                    image={item.image}
+                    description={item.description}
+                    stack={item.stack}
+                  />
+                </div>
+              ))}
+           
+          </div>
 
       </section>
 

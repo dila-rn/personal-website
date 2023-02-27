@@ -14,9 +14,6 @@ function LandingPage() {
     setTheme(themeToggleClicked ? "light" : "dark");
   };
 
-
-  console.log(theme)
-
   const experiences = [
     {
       id: 1,
@@ -70,6 +67,7 @@ function LandingPage() {
       name: "Omah Kos Web Platform",
       description: "With a duration of 1.5 months, Our team was dedicated to creating an easy-to-use and visually appealing platform, equipped with detailed facility explanations and photos of the houses, allowing landlords and seekers to conduct transactions directly within the platform. ",
       image: "/images/omah-kos.jpeg",
+      link: "https://github.com/dila-rn/omah-kos",
       stack: {
         0: "Next.js",
         1: "Bootstrap",
@@ -82,8 +80,9 @@ function LandingPage() {
       id: 1,
       type: "Personal Project",
       name: "Car Rental Platform",
-      description: "With a duration of 1.5 months, Our team was dedicated to creating an easy-to-use and visually appealing platform, equipped with detailed facility explanations and photos of the houses, allowing landlords and seekers to conduct transactions directly within the platform.",
+      description: "I had the opportunity to take up the challenge of building a platform for car rental that filters cars based on their type, availability, and capacity. This was a challage project that required both front-end and back-end development skills from bootcamp course i joined.",
       image: "/images/bcr.jpeg",
+      link: "https://github.com/dila-rn/BCR-single-page-project-using-reactjs",
       stack: {
         0: "React.js",
         1: "Bootstrap",
@@ -98,8 +97,9 @@ function LandingPage() {
       id: 2,
       type: "Personal Project",
       name: "drn - Personal Website",
-      description: "With a duration of 1.5 months, Our team was dedicated to creating an easy-to-use and visually appealing platform, equipped with detailed facility explanations and photos of the houses, allowing landlords and seekers to conduct transactions directly within the platform.",
-      image:"/images/personal-web.jpeg",
+      description: "Building my personal website was a challenging and rewarding project that allowed me to showcase my skills as a developer. To begin, I identified my goals for the website and determined the key features that I wanted to include, such as my self-introduction, experiences, and contact information. I then created a design that was both visually appealing and easy to navigate, ensuring that visitors could easily find the information they were looking for.",
+      image: "/images/personal-web.jpeg",
+      link: "https://github.com/dila-rn/personal-website",
       stack: {
         0: "React.js",
         1: "Bootstrap",
@@ -124,23 +124,23 @@ function LandingPage() {
       <div orientation="left" className="social-media">
         <ul>
           <li>
-            <a href="https://github.com/dila-rn" 
+            <a href="https://github.com/dila-rn"
               target="_blank"
               rel="noreferrer">
-                <Icon icon="bi:github" width="30" height="30" />
+              <Icon icon="bi:github" width="30" height="30" />
             </a>
           </li>
 
           <li>
-            <a href="https://www.linkedin.com/in/dilarizvinan/" 
+            <a href="https://www.linkedin.com/in/dilarizvinan/"
               target="_blank"
               rel="noreferrer">
               <Icon icon="uil:linkedin" width="30" height="30" />
             </a>
           </li>
-          
+
           <li>
-            <a href="https://www.instagram.com/dila.rn/" 
+            <a href="https://www.instagram.com/dila.rn/"
               target="_blank"
               rel="noreferrer">
               <Icon icon="uil:instagram-alt" width="30" height="30" />
@@ -148,7 +148,7 @@ function LandingPage() {
           </li>
 
           <li>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dilarnataisha@gmail.com" 
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dilarnataisha@gmail.com"
               target="_blank"
               rel="noreferrer">
               <Icon icon="mdi:gmail" width="30" height="30" />
@@ -169,8 +169,7 @@ function LandingPage() {
             <p className="textReg">
               I graduated as a Bachelor of Electrical Engineering from Universitas Gadjah Mada, but here i am, pursuing my career in Web Development based on my interest and passion :D
             </p>
-            <a href={process.env.PUBLIC_URL + '/documents/CV-ATS-Dila Rizvina N-2023.pdf'}
-            >
+            <a href={process.env.PUBLIC_URL + '/documents/CV-ATS-Dila Rizvina N-2023.pdf'}>
               <button>
                 Check out my resume!
               </button>
@@ -181,18 +180,16 @@ function LandingPage() {
         <section id="about">
           <div>
             <div className="d-flex align-items-center">
-            <h2 className="textTitle pe-3">About Me</h2> 
-            <hr  className="col-xl-9 col-md-6 col-lg-6 col-sm-6 section-line"/>
+              <h2 className="textTitle pe-3">About Me</h2>
+              <hr className="col-xl-9 col-md-6 col-lg-6 col-sm-6 section-line" />
             </div>
-            
-            <div className="row flex-column-reverse flex-md-row py-4">
 
+            <div className="row flex-column-reverse flex-md-row py-4">
               <div className="col-xl-7 col-lg-7 col-md-6 col-sm-12">
                 <p className="self-desc my-3 pe-4 textSM ">
                   Hi, my name is Dila. I'm a electrical engineering fresh graduate who took a big step outside of my major to pursue my passion for <span>web development and design.</span> I am a self-starter who is passionate about graphic design and developing visually stunning and user-friendly websites.
                   <br />
                   <br />
-
                   <span>I started my journey for Web Development in 2022</span> when I was chosen as scholarship awardee for Full-stack Web Development bootcamp program, and since then, I have been completely immersed in the world of web development and I am always seeking new challenges to improve my skills and knowledge.
                   <br />
                   <br />
@@ -210,19 +207,16 @@ function LandingPage() {
                   <img src={process.env.PUBLIC_URL + '/images/me.jpg'} alt="" />
                 </div>
               </div>
-
-             
             </div>
-
           </div>
         </section>
 
         <section id="experience">
-        <div className="py-4 d-flex align-items-center justify-content-center">
-          <hr  className="col-xl-4 col-lg-4 col-md-2 col-sm-2  section-line"/>
-          <h2 className="textTitle px-4">Experiences</h2>
-          <hr  className="col-xl-4 col-lg-4 col-md-2 col-sm-2  section-line"/>
-        </div>
+          <div className="py-4 d-flex align-items-center justify-content-center">
+            <hr className="col-2 section-line" />
+            <h2 className="textTitle px-4">Experiences</h2>
+            <hr className="col-2 section-line" />
+          </div>
           <div className="px-4 py-3">
             <div className="row">
               {experiences.map(item => (
@@ -241,25 +235,27 @@ function LandingPage() {
       </div>
 
       <section id="project" >
-          <h2 className="textTitle d-flex justify-content-center">Projects</h2>
-          
-          <div className="px-5">
-            
-              {projects.map(item => (
-                <div className="pt-4 pb-5" key={item.id}>
-                  <CardProject
-                  id={item.id}
-                    type={item.type}
-                    name={item.name}
-                    image={item.image}
-                    description={item.description}
-                    stack={item.stack}
-                  />
-                </div>
-              ))}
-           
-          </div>
+        <div className="d-flex justify-content-center align-items-center">
+          <hr className="col-2 section-line" />
+          <h2 className="textTitle px-4">Projects</h2>
+          <hr className="col-2 section-line" />
+        </div>
 
+        <div className="">
+          {projects.map(item => (
+            <div className="" key={item.id}>
+              <CardProject
+                id={item.id}
+                type={item.type}
+                name={item.name}
+                link={item.link}
+                image={item.image}
+                description={item.description}
+                stack={item.stack}
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       <footer>
@@ -270,7 +266,7 @@ function LandingPage() {
             <Icon icon="bi:github" width="30" height="30" />
           </a>
 
-          <a href="https://www.linkedin.com/in/dilarizvinan/" 
+          <a href="https://www.linkedin.com/in/dilarizvinan/"
             target="_blank"
             rel="noreferrer">
             <Icon icon="uil:linkedin" width="30" height="30" />

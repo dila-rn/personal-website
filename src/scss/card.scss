@@ -2,7 +2,7 @@
 @import './themes/theme-dark.scss';
 @import './typography.scss';
 
-
+//default styles
 .landing-page {
     .card-experience {
         background-color: rgba(255, 255, 255, 0.8);
@@ -47,78 +47,118 @@
     }
 
     .card-project {
-        position: relative;
-        left: -8em;
+        min-height: 600px;
+        padding: 0em 8em;
+
+        .open-link {
+            position: relative;
+
+            .icon-position {
+                position: absolute;
+            }
+        }
 
         .wrapper {
             max-width: 45em;
-            min-height: 25em;
             background-color: white;
-            // box-shadow:  8px 14px 32px #ccc2bcdc;
+            box-shadow: 8px 14px 32px #dfd3cbdc;
+        }
 
+        @media screen and (max-width: 1197px) {
+            .wrapper {
+                box-shadow: none;
+            }
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+            opacity: 0.8;
         }
 
         .explanation {
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 8px;
-            position: absolute;
             width: 27em;
             height: fit-content;
 
             h3,
-                div {
-                    color: $elementLight;
-                }
+            div {
+                color: $elementLight;
+            }
         }
 
-
         .card-project-even {
-
+            position: relative;
             text-align: right;
-
-            img {
-                object-fit: cover;
-                width: 100%;
-                height: auto;
-                opacity: 0.8;
-            }
+            padding-bottom: 8em;
 
             .explanation {
-                top: 10em;
-                right: -20em;
+                position: absolute;
+                top: 7em;
+                right: 0em;
                 box-shadow: 16px 16px 0 $elementLight;
             }
-
         }
 
         .card-project-odd {
-            .wrapper {
-                position: relative;
-                right: -20em;
-            }
+            position: relative;
+            text-align: left;
+            padding-bottom: 10em;
 
-            img {
-                position: relative;
-                object-fit: cover;
-                width: 100%;
-                height: auto;
-                opacity: 0.8;
+            .wrapper {
+                margin-left: auto;
             }
 
             .explanation {
-                top: 10em;
-                right: 20em;
+                position: absolute;
+                top: 7em;
                 width: 27em;
                 box-shadow: -16px 16px 0 $elementLight;
-                
+
+            }
+        }
+
+        .card-project-md {
+            display: none;
+
+            .box {
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 8px;
+                box-shadow: 8px 14px 32px #dfd3cbdc;
+            }
+
+            .explanation-md {
+
+                h3,
+                div {
+                    color: $elementLight;
+                }
+            }
+        }
+
+        @media screen and (max-width: 1197px) {
+
+            .card-project-even,
+            .card-project-odd {
+                display: none;
+            }
+
+            .card-project-md {
+                display: block;
             }
         }
     }
 
+    @media screen and (max-width: 1197px) {
+        .card-project {
+            padding: 0em 0em;
+        }
+    }
 }
 
-
-
+//dark mode styles
 .landing-page.dark {
     .card-experience {
         background-color: rgba(255, 255, 255, 0.1);
@@ -135,14 +175,37 @@
         }
     }
 
-    .card-project{
+    .card-project {
+        .wrapper {
+            background-color: $primaryDark;
+            box-shadow: 5px 8px 24px #55637fdc;
+
+            img {
+                opacity: 90%;
+            }
+        }
+
+        @media screen and (max-width: 1197px) {
+            .wrapper {
+                box-shadow: none;
+            }
+        }
+
         .explanation {
-            background-color: rgba(84, 84, 105, 0.4);
+            background-color: rgba(56, 56, 73, 0.94);
 
             h3,
-                div {
-                    color: $elementDark;
-                }
+            div {
+                color: $elementDark;
+            }
+        }
+    }
+
+    .card-project-md {
+        .box {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: none;
         }
     }
 }

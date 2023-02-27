@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navbar, Nav } from 'react-bootstrap';
 import "../scss/LandingPage.scss";
 import { Icon } from '@iconify/react';
 import ThemeToggle from "./ThemeToggle";
@@ -111,7 +112,7 @@ function LandingPage() {
 
   return (
     <div className={`landing-page ${theme}`}>
-      <nav className="py-4 px-5 fixed-top">
+      {/* <nav className="py-4 px-5 fixed-top">
         <div className="logo">drn</div>
         <div className="d-flex">
           <a href="/#about"><div className="px-5">About</div></a>
@@ -119,7 +120,24 @@ function LandingPage() {
           <a href="/#project"><div className="px-5">Projects</div></a>
           <ThemeToggle theme={theme} handleThemeToggle={handleThemeToggle} />
         </div>
-      </nav>
+      </nav> */}
+    
+      <Navbar expand="lg" fixed="top" className="px-5 nav">
+      <Navbar.Brand href="/">drn</Navbar.Brand>
+      {theme === "dark" ?  <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-dark" />: 
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />}
+      
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ms-auto">
+          <a href="/#about" className="ps-5 py-3">About</a>
+          <a href="/#experience" className="ps-5 py-3">Experiences</a>
+          <a href="/#project" className="ps-5 py-3">Projects</a>
+          <Nav.Item className="ps-5 py-3">
+            <ThemeToggle theme={theme} handleThemeToggle={handleThemeToggle} />
+          </Nav.Item>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
 
       <div orientation="left" className="social-media">
         <ul>

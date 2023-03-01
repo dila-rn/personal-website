@@ -7,12 +7,12 @@ import CardExperience from "./CardExperience";
 import CardProject from "./CardProject";
 
 function LandingPage() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const [themeToggleClicked, setThemeToggleClicked] = useState(false)
 
   const handleThemeToggle = () => {
     setThemeToggleClicked(!themeToggleClicked)
-    setTheme(themeToggleClicked ? "light" : "dark");
+    setTheme(themeToggleClicked ? "dark" : "light");
   };
 
   const experiences = [
@@ -98,8 +98,8 @@ function LandingPage() {
       id: 2,
       type: "Personal Project",
       name: "drn - Personal Website",
-      description: "Building my personal website was a challenging and rewarding project that allowed me to showcase my skills as a developer. To begin, I identified my goals for the website and determined the key features that I wanted to include, such as my self-introduction, experiences, and contact information. I then created a design that was both visually appealing and easy to navigate, ensuring that visitors could easily find the information they were looking for.",
-      image: "/images/personal-web.jpeg",
+      description: "Building my personal website was a challenging and rewarding project that allowed me to showcase my skills as a developer. To begin, I identified my goals for the website and determined the key features that I wanted to include, such as my self-introduction, experiences, and contact information. I then created a design with two color modes that was both visually appealing and easy to navigate, ensuring that visitors could easily find the information they were looking for.",
+      image: "/images/personal-website.png",
       link: "https://github.com/dila-rn/personal-website",
       stack: {
         0: "React.js",
@@ -121,23 +121,32 @@ function LandingPage() {
           <ThemeToggle theme={theme} handleThemeToggle={handleThemeToggle} />
         </div>
       </nav> */}
-    
+
       <Navbar expand="lg" fixed="top" className="px-5 nav">
-      <Navbar.Brand href="/">drn</Navbar.Brand>
-      {theme === "dark" ?  <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-dark" />: 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />}
-      
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ms-auto">
-          <a href="/#about" className="ps-5 py-3">About</a>
-          <a href="/#experience" className="ps-5 py-3">Experiences</a>
-          <a href="/#project" className="ps-5 py-3">Projects</a>
-          <Nav.Item className="ps-5 py-3">
-            <ThemeToggle theme={theme} handleThemeToggle={handleThemeToggle} />
-          </Nav.Item>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+        <Navbar.Brand href="/">
+
+          <picture className="d-flex align-items-center justify-content-center">
+            {theme === "light" ?
+              <img src={process.env.PUBLIC_URL + '/images/dila-v2-transparent.png'} alt="dila-logo" width={28} />
+              :
+              <img src={process.env.PUBLIC_URL + '/images/dila-v1-transparent.png'} alt="dila-logo" width={28} />
+            }
+          </picture>
+        </Navbar.Brand>
+        {theme === "dark" ? <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-dark" /> :
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />}
+
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <a href="/#about" className="ps-5 py-3">About</a>
+            <a href="/#experience" className="ps-5 py-3">Experiences</a>
+            <a href="/#project" className="ps-5 py-3">Projects</a>
+            <Nav.Item className="ps-5 py-3">
+              <ThemeToggle theme={theme} handleThemeToggle={handleThemeToggle} />
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
 
       <div orientation="left" className="social-media">
         <ul>

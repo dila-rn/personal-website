@@ -26,7 +26,7 @@ function CardProject(props) {
                             <p className="textSM  py-4">{props.description}</p>
                             <div className="d-flex flex-wrap">
                                 {stacks.map(item => (
-                                    <div className='textSM pe-5 pt-2' key={item}>{item}</div>
+                                    <div className='textSM pe-4 pt-2' key={item}>{item}</div>
                                 ))}
                             </div>
                         </div>
@@ -52,7 +52,7 @@ function CardProject(props) {
                             <p className="textSM  py-4">{props.description}</p>
                             <div className="d-flex flex-wrap">
                                 {stacks.map(item => (
-                                    <div className='textSM pe-5 pt-2' key={item}>{item}</div>
+                                    <div className='textSM pe-4 pt-2' key={item}>{item}</div>
                                 ))}
                             </div>
                         </div>

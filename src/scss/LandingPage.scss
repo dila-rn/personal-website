@@ -120,7 +120,10 @@
 
     @media screen and (max-width: 576px) {
       h1 {
-        font-size: 3.5em;
+        font-size: 3em;
+      }
+      h2{
+        font-size: 1.25em;
       }
     }
 
@@ -258,6 +261,11 @@
       padding: 120px 4em;
 
     }
+    @media screen and (max-width: 576px) {
+
+          padding: 120px 2em;
+      
+  }
   }
 
   footer {

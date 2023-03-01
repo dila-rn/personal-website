@@ -97,7 +97,7 @@ function LandingPage() {
     {
       id: 2,
       type: "Personal Project",
-      name: "drn - Personal Website",
+      name: "dila-rn - Personal Website",
       description: "Building my personal website was a challenging and rewarding project that allowed me to showcase my skills as a developer. To begin, I identified my goals for the website and determined the key features that I wanted to include, such as my self-introduction, experiences, and contact information. I then created a design with two color modes that was both visually appealing and easy to navigate, ensuring that visitors could easily find the information they were looking for.",
       image: "/images/personal-website.png",
       link: "https://github.com/dila-rn/personal-website",
@@ -196,7 +196,7 @@ function LandingPage() {
             <p className="textReg">
               I graduated as a Bachelor of Electrical Engineering from Universitas Gadjah Mada, but here i am, pursuing my career in Web Development based on my interest and passion :D
             </p>
-            <a href={process.env.PUBLIC_URL + '/documents/CV-ATS-Dila Rizvina N-2023.pdf'}>
+            <a href={process.env.PUBLIC_URL + '/documents/CV-ATS-Dila Rizvina N-2023.pdf'} rel="noopener noreferrer" target="_blank">
               <button>
                 Check out my resume!
               </button>

@@ -1,5 +1,5 @@
 <div align="center">
-   <a href="https://dila-rn.vercel.app/">
+   <a href="https://dila-rn.vercel.app/" target="_blank" rel="noreferrer">
       <img src='./public/images/favicon.png' width="150" height="150">
    </a>
 </div>

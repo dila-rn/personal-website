@@ -4,6 +4,8 @@
 
 
 // Default styles
+
+
 .landing-page {
   background-color: $primaryLight;
   color: $secondaryLight;
@@ -20,6 +22,7 @@
     color: inherit;
     text-decoration: none;
   }
+
 
   a:hover {
     color: inherit;
@@ -94,6 +97,7 @@
   }
 
   @media screen and (max-width: 1197px) {
+
     .social-media,
     .section-title {
       display: none;
@@ -110,6 +114,9 @@
       text-align: left;
     }
 
+
+
+
     p {
       max-width: 680px;
     }
@@ -122,7 +129,8 @@
       h1 {
         font-size: 3em;
       }
-      h2{
+
+      h2 {
         font-size: 1.25em;
       }
     }
@@ -261,11 +269,12 @@
       padding: 120px 4em;
 
     }
+
     @media screen and (max-width: 576px) {
 
-          padding: 120px 2em;
-      
-  }
+      padding: 120px 2em;
+
+    }
   }
 
   footer {
@@ -301,6 +310,27 @@
   }
 }
 
+.download-btn {
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background-color: $elementLight;
+}
+
+.download-btn:hover {
+  filter: brightness(110%);
+}
+
+.close-btn {
+  border: 2px solid $elementLight;
+  border-radius: 8px;
+  color: $elementLight;
+  background-color: white;
+}
+
+.close-btn:hover {
+  filter: brightness(95%);
+}
 
 
 // Dark mode styles

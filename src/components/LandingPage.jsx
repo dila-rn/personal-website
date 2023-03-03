@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { Navbar, Nav } from 'react-bootstrap';
 import "../scss/LandingPage.scss";
+import { Navbar, Nav, Modal } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import ThemeToggle from "./ThemeToggle";
 import CardExperience from "./CardExperience";
 import CardProject from "./CardProject";
 
-function LandingPage() {
+function LandingPage(props) {
   const [theme, setTheme] = useState("dark");
-  const [themeToggleClicked, setThemeToggleClicked] = useState(false)
+  const [themeToggleClicked, setThemeToggleClicked] = useState(false);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleThemeToggle = () => {
     setThemeToggleClicked(!themeToggleClicked)
@@ -112,16 +115,6 @@ function LandingPage() {
 
   return (
     <div className={`landing-page ${theme}`}>
-      {/* <nav className="py-4 px-5 fixed-top">
-        <div className="logo">drn</div>
-        <div className="d-flex">
-          <a href="/#about"><div className="px-5">About</div></a>
-          <a href="/#experience"><div className="px-5">Experiences</div></a>
-          <a href="/#project"><div className="px-5">Projects</div></a>
-          <ThemeToggle theme={theme} handleThemeToggle={handleThemeToggle} />
-        </div>
-      </nav> */}
-
       <Navbar expand="lg" fixed="top" className="px-5 nav">
         <Navbar.Brand href="/">
 
@@ -196,12 +189,33 @@ function LandingPage() {
             <p className="textReg">
               I graduated as a Bachelor of Electrical Engineering from Universitas Gadjah Mada, but here i am, pursuing my career in Web Development based on my interest and passion :D
             </p>
-            <a href={process.env.PUBLIC_URL + '/documents/CV-ATS-Dila Rizvina N-2023.pdf'} rel="noopener noreferrer" target="_blank">
-              <button>
+            <a>
+              <button onClick={handleShow}>
                 Check out my resume!
               </button>
             </a>
           </section>
+
+          <Modal {...props} className="preview-modal"
+            size="xl" show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Resume Preview</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <embed src={process.env.PUBLIC_URL + '/documents/CV-ATS-Dila Rizvina N-2023.pdf'} type="application/pdf" width="100%" height="500px" />
+            </Modal.Body>
+            <Modal.Footer>
+              <a href={process.env.PUBLIC_URL + '/documents/CV-ATS-Dila Rizvina N-2023.pdf'} download style={{ textDecoration: "none" }}>
+                <button className="d-flex align-items-center px-3 py-2 download-btn">
+                  <Icon icon="material-symbols:download-rounded" width="20" height="20" />
+                  &nbsp; Download
+                </button>
+              </a>
+              <button className="px-3 py-2 close-btn" onClick={handleClose}>
+                Close
+              </button>
+            </Modal.Footer>
+          </Modal>
         </main>
 
         <section id="about">
